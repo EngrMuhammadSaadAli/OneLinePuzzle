@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "62132854510",
+    "firebase_url": "https://one-line-puzzle-game-644681.firebaseio.com",
+    "project_id": "one-line---puzzle-game-644681",
+    "storage_bucket": "one-line---puzzle-game-644681.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62132854510:android:35b62d77a32c955e",
+        "android_client_info": {
+          "package_name": "com.linegames.oneline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62132854510-4u3959k2ehavm6uvr0urlh2ggpfglbs3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDShKdLM5W5VvwVtOxJ10OzIN3veo0Wo5M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62132854510-4u3959k2ehavm6uvr0urlh2ggpfglbs3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
