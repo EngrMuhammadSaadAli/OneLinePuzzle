@@ -13,7 +13,7 @@ public class IAPProduct : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(productId))
         {
-            priceText.text = IAPManager.Instance.GetPrice(productId);
+          //  priceText.text = IAPManager.Instance.GetPrice(productId);
         }
 
         CheckForPurchase();
@@ -23,26 +23,26 @@ public class IAPProduct : MonoBehaviour
     {
         if (productId == "complete_pack")
         {
-            if (IAPManager.Instance.IsAlreadyPurchased(productId) || GameData.getInstance().UnlockCompletePack)
-            {
-                GameData.getInstance().UnlockCompletePack = true;
-                GameData.getInstance().RemoveAds = true;
-                priceText.gameObject.SetActive(false);
-                if (purchaseImage != null)
-                    purchaseImage.gameObject.SetActive(true);
-                GetComponent<Button>().interactable = false;
-            }
+            //if (IAPManager.Instance.IsAlreadyPurchased(productId) || GameData.getInstance().UnlockCompletePack)
+            //{
+            //    GameData.getInstance().UnlockCompletePack = true;
+            //    GameData.getInstance().RemoveAds = true;
+            //    priceText.gameObject.SetActive(false);
+            //    if (purchaseImage != null)
+            //        purchaseImage.gameObject.SetActive(true);
+            //    GetComponent<Button>().interactable = false;
+            //}
         }
 
         if (productId == "remove_ads")
         {
-            if (IAPManager.Instance.IsAlreadyPurchased(productId) || GameData.getInstance().RemoveAds)
-            {
-                priceText.gameObject.SetActive(false);
-                if (purchaseImage != null)
-                    purchaseImage.gameObject.SetActive(true);
-                GetComponent<Button>().interactable = false;
-            }
+            //if (IAPManager.Instance.IsAlreadyPurchased(productId) || GameData.getInstance().RemoveAds)
+            //{
+            //    priceText.gameObject.SetActive(false);
+            //    if (purchaseImage != null)
+            //        purchaseImage.gameObject.SetActive(true);
+            //    GetComponent<Button>().interactable = false;
+            //}
         }
     }
 
@@ -54,7 +54,7 @@ public class IAPProduct : MonoBehaviour
         }
         if (!string.IsNullOrEmpty(productId))
         {
-            IAPManager.Instance.BuyProductItem(productId);
+            // IAPManager.Instance.BuyProductItem(productId);
         }
     }
 }

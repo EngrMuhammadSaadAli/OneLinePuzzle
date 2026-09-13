@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using GoogleMobileAds.Api;
+//using GoogleMobileAds.Api;
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
@@ -31,9 +31,9 @@ public class AdmobManager : MonoBehaviour
     public string bannerIdIOS;
 
 
-    InterstitialAd interstitial;
-    RewardBasedVideoAd rewardBasedVideo;
-    BannerView bannerView;
+    //InterstitialAd interstitial;
+    //RewardBasedVideoAd rewardBasedVideo;
+    //BannerView bannerView;
 
     private void Awake()
     {
@@ -55,11 +55,11 @@ public class AdmobManager : MonoBehaviour
             string appId = "unexpected_platform";
 #endif
 
-        // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
+        //// Initialize the Google Mobile Ads SDK.
+        //MobileAds.Initialize(appId);
 
-        this.rewardBasedVideo = RewardBasedVideoAd.Instance;
-        rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
+        //this.rewardBasedVideo = RewardBasedVideoAd.Instance;
+        //rewardBasedVideo.OnAdRewarded += HandleRewardBasedVideoRewarded;
 
         RequestInterstitial();
         RequestRewardedVideo();
@@ -92,11 +92,11 @@ public class AdmobManager : MonoBehaviour
 #endif
             }
 
-            bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
-            // Create an empty ad request.
-            AdRequest request = new AdRequest.Builder().Build();
-            // Load the interstitial with the request.
-            bannerView.LoadAd(request);
+            //bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+            //// Create an empty ad request.
+            //AdRequest request = new AdRequest.Builder().Build();
+            //// Load the interstitial with the request.
+            //bannerView.LoadAd(request);
         }
     }
 
@@ -127,12 +127,12 @@ public class AdmobManager : MonoBehaviour
 #endif
             }
 
-            // Initialize an InterstitialAd.
-            interstitial = new InterstitialAd(adUnitId);
-            // Create an empty ad request.
-            AdRequest request = new AdRequest.Builder().Build();
-            // Load the interstitial with the request.
-            interstitial.LoadAd(request);
+            //// Initialize an InterstitialAd.
+            //interstitial = new InterstitialAd(adUnitId);
+            //// Create an empty ad request.
+            //AdRequest request = new AdRequest.Builder().Build();
+            //// Load the interstitial with the request.
+            //interstitial.LoadAd(request);
         }
     }
 
@@ -160,71 +160,71 @@ public class AdmobManager : MonoBehaviour
 #endif
         }
 
-        // Create an empty ad request.
-        AdRequest request = new AdRequest.Builder().Build();
-        // Load the rewarded video ad with the request.
-        this.rewardBasedVideo.LoadAd(request, adUnitId);
+        //// Create an empty ad request.
+        //AdRequest request = new AdRequest.Builder().Build();
+        //// Load the rewarded video ad with the request.
+        //this.rewardBasedVideo.LoadAd(request, adUnitId);
     }
 
 
     public void ShowInterstitialAd()
     {
-        if (GameData.getInstance().IsAdsAvailable)
-        {
-            if (interstitial.IsLoaded())
-            {
-                interstitial.Show();
-            }
-            else
-            {
-                RequestInterstitial();
-            }
-        }
+        //if (GameData.getInstance().IsAdsAvailable)
+        //{
+        //    if (interstitial.IsLoaded())
+        //    {
+        //        interstitial.Show();
+        //    }
+        //    else
+        //    {
+        //        RequestInterstitial();
+        //    }
+        //}
     }
 
     public void ShowRewardAds()
     {
-        if (rewardBasedVideo.IsLoaded())
-        {
-            rewardBasedVideo.Show();
-        }
-        else
-        {
-            RequestRewardedVideo();
-        }
+        //if (rewardBasedVideo.IsLoaded())
+        //{
+        //    rewardBasedVideo.Show();
+        //}
+        //else
+        //{
+        //    RequestRewardedVideo();
+        //}
     }
 
 
-    public void HandleRewardBasedVideoRewarded(object sender, Reward args)
-    {
-        GameData.getInstance().tipRemain += 1;
-        if (MainMenuPanel.Instance)
-        {
-            MainMenuPanel.Instance.IAPPanel.ShowHintNumber();
-        }
-        if (SceneManager.GetActiveScene().name == "Game")
-        {
-            GameData.getInstance().level.RefreshHintView();
-        }
-    }
+    //public void HandleRewardBasedVideoRewarded(object sender, Reward args)
+    //{
+    //    GameData.getInstance().tipRemain += 1;
+    //    if (MainMenuPanel.Instance)
+    //    {
+    //        MainMenuPanel.Instance.IAPPanel.ShowHintNumber();
+    //    }
+    //    if (SceneManager.GetActiveScene().name == "Game")
+    //    {
+    //        GameData.getInstance().level.RefreshHintView();
+    //    }
+    //}
 
     public void ShowBannerAds()
     {
-        if (bannerView != null)
-        {
-            bannerView.Show();
-        }
-        else
-        {
-            RequestBannerAd();
-        }
+        //if (bannerView != null)
+        //{
+        //    bannerView.Show();
+        //}
+        //else
+        //{
+        //    RequestBannerAd();
+        //}
     }
 
     public void HideBannerAds()
     {
-        if (bannerView != null)
-        {
-            bannerView.Hide();
-        }
+        //if (bannerView != null)
+        //{
+        //    bannerView.Hide();
+        //}
     }
 }

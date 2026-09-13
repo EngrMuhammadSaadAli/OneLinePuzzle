@@ -23,10 +23,10 @@ public class IAPPanel : MonoBehaviour
 
     void RestorePurchase()
     {
-        if (IAPManager.Instance)
-        {
-            IAPManager.Instance.RestorePurchases();
-        }
+        //if (IAPManager.Instance)
+        //{
+        //    IAPManager.Instance.RestorePurchases();
+        //}
     }
 
     public void ShowHintNumber()

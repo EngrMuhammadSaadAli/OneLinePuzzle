@@ -30,6 +30,7 @@ using UnityEngine;
 * @class LTDescr
 * @constructor
 */
+
 public class LTDescr
 {
 	public bool toggle;
